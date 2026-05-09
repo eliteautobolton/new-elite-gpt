@@ -212,7 +212,7 @@ Can you confirm the final price and availability please?`;
           <div className="grid gap-10 md:grid-cols-[1fr_0.9fr] md:items-center">
             <div>
               <p className="mb-4 inline-flex rounded-full border border-white/15 bg-white/10 px-3 py-1 text-sm text-white/75 backdrop-blur">
-                Simple size selector
+                Our Fully Custom 'Detail Builder'
               </p>
               <h1 className="max-w-4xl text-5xl font-semibold tracking-tight md:text-7xl">
                 Build the exact detail your car needs.
