@@ -49,12 +49,8 @@ export default function CeramicCoatings() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(0,132,255,0.34),transparent_34%),radial-gradient(circle_at_top_right,rgba(255,216,77,0.18),transparent_30%)]" />
 
         <header className="relative mx-auto flex max-w-7xl items-center justify-between px-5 py-5 md:px-8">
-          <Link href="/" className="flex items-center gap-3">
-            <img src="/logo.png" alt="Elite Auto Detailing logo" className="h-14 w-14 rounded-2xl object-contain" />
-            <div>
-              <p className="text-lg font-semibold tracking-tight">Elite Auto Detailing</p>
-              <p className="text-xs text-white/55">Ceramic Coatings</p>
-            </div>
+          <Link href="/" aria-label="Elite Auto Detailing home">
+            <img src="/logo.png" alt="Elite Auto Detailing logo" className="h-16 w-16 rounded-2xl object-contain" />
           </Link>
 
           <Link href="/build-your-detail" className="hidden rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium backdrop-blur transition hover:bg-white/15 md:flex">
