@@ -11,10 +11,10 @@ A Vercel-ready Next.js website for Elite Auto Detailing.
 ## V3 Build Your Detail features
 
 - No paid/free vehicle API required
-- Built-in car make/model database
-- Make/model/year dropdown system
-- Manual vehicle entry for anything not listed
-- Auto vehicle size detection: Small, Medium, Large, XL
+- Simple vehicle size selector
+- Small / Medium / Large / XL selection
+- Faster user flow
+- Live quote updates based on vehicle size
 - Live guide quote calculator
 - Base package selection:
   - Mini Detail
