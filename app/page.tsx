@@ -22,7 +22,7 @@ export default function Home() {
             <img
               src="/logo.png"
               alt="Elite Auto Detailing logo"
-              className="h-16 w-16 rounded-2xl object-contain"
+              className="h-22 w-22 rounded-2xl object-contain"
             />
           </Link>
 
