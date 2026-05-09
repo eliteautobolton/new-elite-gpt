@@ -16,6 +16,7 @@ type PricedOption = {
   name: string;
   description: string;
   prices: Record<VehicleSize, number>;
+  popular?: boolean;
 };
 
 type ConditionOption = {
@@ -43,6 +44,7 @@ const basePackages: PricedOption[] = [
     name: "Full Valet",
     description: "Deep interior and exterior reset, ideal for dirtier vehicles.",
     prices: { Small: 120, Medium: 135, Large: 155, XL: 180 },
+    popular: true,
   },
   {
     name: "Full Detail",
@@ -62,6 +64,7 @@ const polishOptions: PricedOption[] = [
     name: "Stage 1 Gloss",
     description: "Gloss enhancement and light swirl improvement.",
     prices: { Small: 100, Medium: 120, Large: 140, XL: 170 },
+    popular: true,
   },
   {
     name: "Stage 2 Correct",
@@ -91,6 +94,7 @@ const protectionOptions: PricedOption[] = [
     name: "1 Year Ceramic",
     description: "Entry ceramic protection for easier maintenance.",
     prices: { Small: 80, Medium: 100, Large: 125, XL: 150 },
+    popular: true,
   },
   {
     name: "3 Year Ceramic",
@@ -212,7 +216,7 @@ Can you confirm the final price and availability please?`;
           <div className="grid gap-10 md:grid-cols-[1fr_0.9fr] md:items-center">
             <div>
               <p className="mb-4 inline-flex rounded-full border border-white/15 bg-white/10 px-3 py-1 text-sm text-white/75 backdrop-blur">
-                Our Fully Custom 'Detail Builder'
+                Simple size selector
               </p>
               <h1 className="max-w-4xl text-5xl font-semibold tracking-tight md:text-7xl">
                 Build the exact detail your car needs.
@@ -443,13 +447,21 @@ function SelectorSection({
               type="button"
               key={item.name}
               onClick={() => setSelected(item.name)}
-              className={`rounded-[1.5rem] border p-5 text-left transition hover:-translate-y-1 ${
+              className={`relative rounded-[1.5rem] border p-5 text-left transition hover:-translate-y-1 ${
                 isSelected
                   ? "border-[#ffd84d] bg-white/[0.12]"
+                  : item.popular
+                  ? "border-[#ffd84d]/40 bg-white/[0.075] hover:bg-white/[0.1]"
                   : "border-white/10 bg-black/25 hover:bg-white/[0.08]"
               }`}
             >
-              <div className="flex items-start justify-between gap-4">
+              {item.popular && (
+                <div className="absolute right-4 top-4 rounded-full bg-[#ffd84d] px-3 py-1 text-xs font-bold text-black">
+                  Most popular
+                </div>
+              )}
+
+              <div className="flex items-start justify-between gap-4 pr-24">
                 <div>
                   <h3 className="text-xl font-semibold">{item.name}</h3>
                   <p className="mt-1 text-sm font-bold text-[#ffd84d]">
@@ -460,7 +472,7 @@ function SelectorSection({
                       : "Select size first"}
                   </p>
                 </div>
-                {isSelected && <Check className="h-5 w-5 text-[#ffd84d]" />}
+                {isSelected && <Check className="h-5 w-5 shrink-0 text-[#ffd84d]" />}
               </div>
 
               <p className="mt-4 text-sm leading-6 text-white/58">
