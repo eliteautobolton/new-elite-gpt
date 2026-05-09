@@ -17,7 +17,7 @@ Can you send me the details please?`
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(0,132,255,0.34),transparent_34%),radial-gradient(circle_at_top_right,rgba(255,216,77,0.18),transparent_30%)]" />
         <header className="relative mx-auto flex max-w-7xl items-center justify-between px-5 py-5 md:px-8">
-          <Link href="/" aria-label="Elite Auto Detailing home"><img src="/logo.png" alt="Elite Auto Detailing logo" className="h-16 w-16 rounded-2xl object-contain" /></Link>
+          <Link href="/" aria-label="Elite Auto Detailing home"><img src="/logo.png" alt="Elite Auto Detailing logo" className="h-22 w-22 rounded-2xl object-contain" /></Link>
           <Link href="/" className="hidden rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium backdrop-blur transition hover:bg-white/15 md:flex">Back home</Link>
         </header>
         <div className="relative mx-auto max-w-7xl px-5 pb-20 pt-10 md:px-8 md:pb-28 md:pt-20">
