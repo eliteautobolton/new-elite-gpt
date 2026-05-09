@@ -1,25 +1,21 @@
-# Elite Auto Detailing Website V6
+# Elite Auto Detailing Website V7
 
-V6 cleans up the front main page.
+V7 adds Most Popular badges to the Build Your Detail page.
 
 ## What changed
 
-- Homepage is now minimalist and conversion-focused
-- Main page pushes customers to:
-  - `/build-your-detail`
-  - `/maintenance-program`
-- Removed cluttered package grid from homepage
-- Build Your Detail and Maintenance Program pages are unchanged from V5
-- Contact/address remain included:
-  - 5 Thornton Street, Bolton, BL2 2BU
-  - 07988770864
+On `/build-your-detail`, these options now show a Most Popular banner:
+
+- Full Valet
+- Stage 1 Gloss
+- 1 Year Ceramic
 
 ## Replace these files in GitHub
 
-If you already have V5 uploaded, replace:
+If you already have V6 uploaded, replace:
 
 ```bash
-app/page.tsx
+app/build-your-detail/page.tsx
 package.json
 README.md
 ```
@@ -27,14 +23,7 @@ README.md
 Keep:
 
 ```bash
-app/build-your-detail/page.tsx
+app/page.tsx
 app/maintenance-program/page.tsx
 public/logo.png
-```
-
-## Run locally
-
-```bash
-npm install
-npm run dev
 ```
