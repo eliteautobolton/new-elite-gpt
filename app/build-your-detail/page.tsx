@@ -4,98 +4,11 @@ import Link from "next/link";
 import { ArrowLeft, Check, Car, MessageCircle, Search, Sparkles, Calculator, Wand2 } from "lucide-react";
 import { useMemo, useState } from "react";
 
-type VehicleModel = {
-  model: string;
-  size: "Small" | "Medium" | "Large" | "XL";
-  body: string;
-};
 
-const vehicleDatabase: Record<string, VehicleModel[]> = {
-  Audi: [
-    { model: "A1", size: "Small", body: "Hatchback" },
-    { model: "A3", size: "Medium", body: "Hatchback / Saloon" },
-    { model: "A4", size: "Medium", body: "Saloon / Avant" },
-    { model: "A5", size: "Medium", body: "Coupe / Sportback" },
-    { model: "A6", size: "Large", body: "Saloon / Avant" },
-    { model: "Q2", size: "Medium", body: "SUV" },
-    { model: "Q3", size: "Medium", body: "SUV" },
-    { model: "Q5", size: "Large", body: "SUV" },
-    { model: "Q7", size: "XL", body: "Large SUV" },
-  ],
-  BMW: [
-    { model: "1 Series", size: "Small", body: "Hatchback" },
-    { model: "2 Series", size: "Small", body: "Coupe / MPV" },
-    { model: "3 Series", size: "Medium", body: "Saloon / Touring" },
-    { model: "4 Series", size: "Medium", body: "Coupe / Gran Coupe" },
-    { model: "5 Series", size: "Large", body: "Saloon / Touring" },
-    { model: "X1", size: "Medium", body: "SUV" },
-    { model: "X3", size: "Large", body: "SUV" },
-    { model: "X5", size: "XL", body: "Large SUV" },
-    { model: "X6", size: "XL", body: "Large SUV Coupe" },
-  ],
-  Ford: [
-    { model: "Fiesta", size: "Small", body: "Hatchback" },
-    { model: "Focus", size: "Medium", body: "Hatchback / Estate" },
-    { model: "Mondeo", size: "Large", body: "Saloon / Estate" },
-    { model: "Kuga", size: "Large", body: "SUV" },
-    { model: "Puma", size: "Medium", body: "SUV" },
-    { model: "Transit Custom", size: "XL", body: "Van" },
-  ],
-  Mercedes: [
-    { model: "A-Class", size: "Small", body: "Hatchback / Saloon" },
-    { model: "C-Class", size: "Medium", body: "Saloon / Estate" },
-    { model: "E-Class", size: "Large", body: "Saloon / Estate" },
-    { model: "CLA", size: "Medium", body: "Coupe / Shooting Brake" },
-    { model: "GLA", size: "Medium", body: "SUV" },
-    { model: "GLC", size: "Large", body: "SUV" },
-    { model: "GLE", size: "XL", body: "Large SUV" },
-  ],
-  Nissan: [
-    { model: "Micra", size: "Small", body: "Hatchback" },
-    { model: "Juke", size: "Medium", body: "SUV" },
-    { model: "Qashqai", size: "Large", body: "SUV" },
-    { model: "X-Trail", size: "XL", body: "Large SUV" },
-    { model: "Navara", size: "XL", body: "Pickup" },
-  ],
-  Tesla: [
-    { model: "Model 3", size: "Medium", body: "Saloon" },
-    { model: "Model Y", size: "Large", body: "SUV" },
-    { model: "Model S", size: "Large", body: "Saloon" },
-    { model: "Model X", size: "XL", body: "Large SUV" },
-  ],
-  Toyota: [
-    { model: "Yaris", size: "Small", body: "Hatchback" },
-    { model: "Corolla", size: "Medium", body: "Hatchback / Estate" },
-    { model: "C-HR", size: "Medium", body: "SUV" },
-    { model: "RAV4", size: "Large", body: "SUV" },
-    { model: "Hilux", size: "XL", body: "Pickup" },
-  ],
-  Volkswagen: [
-    { model: "Polo", size: "Small", body: "Hatchback" },
-    { model: "Golf", size: "Medium", body: "Hatchback / Estate" },
-    { model: "Passat", size: "Large", body: "Saloon / Estate" },
-    { model: "T-Roc", size: "Medium", body: "SUV" },
-    { model: "Tiguan", size: "Large", body: "SUV" },
-    { model: "Transporter", size: "XL", body: "Van" },
-  ],
-  Vauxhall: [
-    { model: "Corsa", size: "Small", body: "Hatchback" },
-    { model: "Astra", size: "Medium", body: "Hatchback / Estate" },
-    { model: "Insignia", size: "Large", body: "Saloon / Estate" },
-    { model: "Mokka", size: "Medium", body: "SUV" },
-    { model: "Grandland", size: "Large", body: "SUV" },
-  ],
-  Other: [
-    { model: "Small Car", size: "Small", body: "Hatchback / Small coupe" },
-    { model: "Medium Car", size: "Medium", body: "Saloon / Hatchback / Estate" },
-    { model: "Large Car or SUV", size: "Large", body: "Large car / SUV" },
-    { model: "Van / 7 Seater / Pickup", size: "XL", body: "Large vehicle" },
-  ],
-};
-
-const years = Array.from({ length: 27 }, (_, i) => String(2026 - i));
+const vehicleSizes = ["Small", "Medium", "Large", "XL"];
 
 const basePackages = [
+
   { name: "Mini Detail", description: "Strong maintenance-style clean with presentation and protection focus.", small: 60, medium: 70, large: 85, xl: 100 },
   { name: "Full Valet", description: "Deep interior and exterior reset, ideal for dirtier vehicles.", small: 120, medium: 135, large: 155, xl: 180 },
   { name: "Full Detail", description: "The full works approach for a car that needs proper attention.", small: 180, medium: 220, large: 260, xl: 320 },
@@ -130,20 +43,12 @@ function priceForSize(item: any, size?: string) {
 }
 
 export default function BuildYourDetail() {
-  const makes = Object.keys(vehicleDatabase);
-  const [make, setMake] = useState("");
-  const [model, setModel] = useState("");
-  const [year, setYear] = useState("");
-  const [manualVehicle, setManualVehicle] = useState("");
+  const [vehicleSize, setVehicleSize] = useState("");
   const [basePackage, setBasePackage] = useState("");
   const [polish, setPolish] = useState("");
   const [protection, setProtection] = useState("");
   const [conditions, setConditions] = useState<string[]>([]);
 
-  const availableModels = make ? vehicleDatabase[make] || [] : [];
-  const selectedVehicle = availableModels.find((item) => item.model === model);
-  const vehicleSize = selectedVehicle?.size;
-  const vehicleLabel = selectedVehicle ? `${year ? `${year} ` : ""}${make} ${selectedVehicle.model}` : manualVehicle;
 
   const selectedBase = basePackages.find((item) => item.name === basePackage);
   const selectedPolish = polishOptions.find((item) => item.name === polish);
@@ -164,7 +69,7 @@ export default function BuildYourDetail() {
     );
   }, [vehicleSize, selectedBase, selectedPolish, selectedProtection, conditionTotal]);
 
-  const bookingReady = (selectedVehicle || manualVehicle) && basePackage && polish && protection;
+  const bookingReady = vehicleSize && basePackage && polish && protection;
 
   const toggleCondition = (name: string) => {
     setConditions((current) =>
@@ -174,9 +79,7 @@ export default function BuildYourDetail() {
 
   const whatsappText = `Hi Elite Auto Detailing, I want to book a Build Your Detail package.
 
-Vehicle: ${vehicleLabel || "Not entered"}
-Vehicle size: ${vehicleSize || "Manual / to confirm"}
-Body type: ${selectedVehicle?.body || "To confirm"}
+Vehicle size: ${vehicleSize || "Not selected"}
 
 Base package: ${basePackage || "Not selected"}
 Paint enhancement: ${polish || "Not selected"}
@@ -215,8 +118,8 @@ Can you confirm the final price and availability please?`;
               <h2 className="mt-2 text-4xl font-bold text-[#ffd84d]">{total ? `£${total}` : "Build quote"}</h2>
               <p className="mt-3 text-sm text-white/55">Guide price only. Final quote depends on condition after inspection/photos.</p>
               <div className="mt-5 space-y-2 text-sm text-white/65">
-                <p>Vehicle: {vehicleLabel || "Not selected"}</p>
-                <p>Size: {vehicleSize || "To confirm"}</p>
+                <p>Vehicle: {vehicleSize || "Not selected"}</p>
+                
                 <p>Base: {basePackage || "Not selected"}</p>
                 <p>Paint: {polish || "Not selected"}</p>
                 <p>Protection: {protection || "Not selected"}</p>
@@ -228,28 +131,37 @@ Can you confirm the final price and availability please?`;
 
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-24">
         <div className="rounded-[2rem] border border-white/10 bg-white/[0.055] p-5 md:p-8">
-          <StepHeader number="1" title="Choose your vehicle" subtitle="Pick from the built-in database or use manual entry." />
-          <div className="grid gap-4 md:grid-cols-3">
-            <Select label="Make" value={make} onChange={(value) => { setMake(value); setModel(""); }} options={makes} placeholder="Select make" />
-            <Select label="Model" value={model} onChange={setModel} options={availableModels.map((item) => item.model)} placeholder="Select model" disabled={!make} />
-            <Select label="Year" value={year} onChange={setYear} options={years} placeholder="Select year" />
-          </div>
+          <StepHeader number="1" title="Choose your vehicle size" subtitle="Simple sizing system for faster bookings." />
 
-          <div className="mt-5">
-            <label className="space-y-2 block">
-              <span className="text-sm text-white/60">Can’t find it? Manual vehicle entry</span>
-              <input value={manualVehicle} onChange={(e) => setManualVehicle(e.target.value)} placeholder="e.g. MG ZT 190, Renault 5 Turbo, imported car, classic car" className="w-full rounded-2xl border border-white/10 bg-black/30 px-4 py-4 outline-none ring-[#58a6ff] transition focus:ring-2" />
-            </label>
+          <div className="grid gap-4 md:grid-cols-4">
+            {vehicleSizes.map((size) => {
+              const active = vehicleSize === size;
+              return (
+                <button
+                  key={size}
+                  onClick={() => setVehicleSize(size)}
+                  className={`rounded-[1.5rem] border p-6 text-left transition hover:-translate-y-1 ${
+                    active
+                      ? "border-[#ffd84d] bg-white/[0.12]"
+                      : "border-white/10 bg-black/25 hover:bg-white/[0.08]"
+                  }`}
+                >
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h3 className="text-2xl font-semibold">{size}</h3>
+                      <p className="mt-2 text-sm text-white/55">
+                        {size === "Small" && "Fiesta, Polo, A1, Yaris"}
+                        {size === "Medium" && "3 Series, Golf, A4, Focus"}
+                        {size === "Large" && "SUVs, estates, larger saloons"}
+                        {size === "XL" && "Vans, pickups, 7 seaters"}
+                      </p>
+                    </div>
+                    {active && <Check className="h-5 w-5 text-[#ffd84d]" />}
+                  </div>
+                </button>
+              );
+            })}
           </div>
-
-          {selectedVehicle && (
-            <div className="mt-6 grid gap-4 rounded-[1.5rem] border border-white/10 bg-black/25 p-5 md:grid-cols-4">
-              <Info label="Make" value={make} />
-              <Info label="Model" value={selectedVehicle.model} />
-              <Info label="Body" value={selectedVehicle.body} />
-              <Info label="Detected size" value={selectedVehicle.size} />
-            </div>
-          )}
         </div>
 
         <SelectorSection number="2" title="Choose your base package" items={basePackages} selected={basePackage} setSelected={setBasePackage} vehicleSize={vehicleSize} />
@@ -318,10 +230,6 @@ function Select({ label, value, onChange, options, placeholder, disabled }: { la
       </select>
     </label>
   );
-}
-
-function Info({ label, value }: { label: string; value: string }) {
-  return <div><p className="text-xs text-white/40">{label}</p><p className="mt-1 font-semibold">{value}</p></div>;
 }
 
 function SelectorSection({ number, title, items, selected, setSelected, vehicleSize }: { number: string; title: string; items: any[]; selected: string; setSelected: (value: string) => void; vehicleSize?: string }) {
