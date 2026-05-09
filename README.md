@@ -1,38 +1,38 @@
-# Elite Auto Detailing Website V5
+# Elite Auto Detailing Website V6
 
-V5 fixes the Build Your Detail crash.
+V6 cleans up the front main page.
 
 ## What changed
 
-- Removed the buggy dynamic vehicle/model logic completely
-- Rebuilt `/build-your-detail/page.tsx` with safer typed pricing
-- Vehicle selection is now simple:
-  - Small
-  - Medium
-  - Large
-  - XL
-- Quote calculator works from the selected size
-- WhatsApp booking still sends selections to 07988770864
+- Homepage is now minimalist and conversion-focused
+- Main page pushes customers to:
+  - `/build-your-detail`
+  - `/maintenance-program`
+- Removed cluttered package grid from homepage
+- Build Your Detail and Maintenance Program pages are unchanged from V5
+- Contact/address remain included:
+  - 5 Thornton Street, Bolton, BL2 2BU
+  - 07988770864
 
 ## Replace these files in GitHub
 
-If you already have V4 uploaded, you only need to replace:
+If you already have V5 uploaded, replace:
 
 ```bash
-app/build-your-detail/page.tsx
+app/page.tsx
 package.json
 README.md
 ```
 
-## Logo
-
-Keep your logo here:
+Keep:
 
 ```bash
+app/build-your-detail/page.tsx
+app/maintenance-program/page.tsx
 public/logo.png
 ```
 
-## Run
+## Run locally
 
 ```bash
 npm install
