@@ -1,28 +1,26 @@
-# Elite Auto Detailing Website V8
+# Elite Auto Detailing Website V9
 
-V8 adds two new education/sales pages.
+V9 update.
 
-## New pages
+## What changed
 
-- `/machine-polishing`
-  - Machine polishing benefits
-  - Stage 1 Gloss explained
-  - Stage 2 Correct explained
-  - Stage 3 Restore explained
-
-- `/ceramic-coatings`
-  - Ceramic coating benefits
-  - Wax, 1 Year, 3 Year and 5 Year options explained
-  - 1 Year Ceramic marked as Most Popular
-
-## Homepage update
-
-Homepage now links to the new education pages.
+- Header now uses just the logo instead of logo + text
+- Cleaner, more premium Apple-style header
+- Keeps all V8 pages:
+  - Homepage
+  - Build Your Detail
+  - Maintenance Program
+  - Machine Polishing
+  - Ceramic Coatings
 
 ## Replace these files/folders in GitHub
 
+For the full update, replace/upload:
+
 ```bash
 app/page.tsx
+app/build-your-detail/page.tsx
+app/maintenance-program/page.tsx
 app/machine-polishing/page.tsx
 app/ceramic-coatings/page.tsx
 package.json
@@ -32,7 +30,12 @@ README.md
 Keep:
 
 ```bash
-app/build-your-detail/page.tsx
-app/maintenance-program/page.tsx
 public/logo.png
+```
+
+## Run locally
+
+```bash
+npm install
+npm run dev
 ```
