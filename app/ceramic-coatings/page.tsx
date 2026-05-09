@@ -50,7 +50,7 @@ export default function CeramicCoatings() {
 
         <header className="relative mx-auto flex max-w-7xl items-center justify-between px-5 py-5 md:px-8">
           <Link href="/" aria-label="Elite Auto Detailing home">
-            <img src="/logo.png" alt="Elite Auto Detailing logo" className="h-16 w-16 rounded-2xl object-contain" />
+            <img src="/logo.png" alt="Elite Auto Detailing logo" className="h-22 w-22 rounded-2xl object-contain" />
           </Link>
 
           <Link href="/build-your-detail" className="hidden rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium backdrop-blur transition hover:bg-white/15 md:flex">
