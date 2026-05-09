@@ -1,66 +1,40 @@
-# Elite Auto Detailing Website V3
+# Elite Auto Detailing Website V5
 
-A Vercel-ready Next.js website for Elite Auto Detailing.
+V5 fixes the Build Your Detail crash.
 
-## Included pages
+## What changed
 
-- `/` — homepage with package cards and multi-select booking form
-- `/maintenance-program` — Maintenance Program page
-- `/build-your-detail` — full Build Your Detail configurator
+- Removed the buggy dynamic vehicle/model logic completely
+- Rebuilt `/build-your-detail/page.tsx` with safer typed pricing
+- Vehicle selection is now simple:
+  - Small
+  - Medium
+  - Large
+  - XL
+- Quote calculator works from the selected size
+- WhatsApp booking still sends selections to 07988770864
 
-## V3 Build Your Detail features
+## Replace these files in GitHub
 
-- No paid/free vehicle API required
-- Simple vehicle size selector
-- Small / Medium / Large / XL selection
-- Faster user flow
-- Live quote updates based on vehicle size
-- Live guide quote calculator
-- Base package selection:
-  - Mini Detail
-  - Full Valet
-  - Full Detail
-- Paint enhancement:
-  - No Machine Polish
-  - Stage 1 Gloss
-  - Stage 2 Correct
-  - Stage 3 Restore
-- Protection:
-  - No Protection
-  - Wax
-  - 1 Year Ceramic
-  - 3 Year Ceramic
-  - 5 Year Ceramic
-- Condition extras:
-  - Heavy staining
-  - Dog hair
-  - Mould / biohazard
-- WhatsApp booking button to 07988770864
+If you already have V4 uploaded, you only need to replace:
+
+```bash
+app/build-your-detail/page.tsx
+package.json
+README.md
+```
 
 ## Logo
 
-Add your logo here before deploying:
+Keep your logo here:
 
 ```bash
 public/logo.png
 ```
 
-## Run locally
+## Run
 
 ```bash
 npm install
 npm run dev
 ```
-
-Then open:
-
-```bash
-http://localhost:3000
-```
-
-## Deploy to Vercel
-
-1. Upload all files to a new GitHub repo
-2. Add `public/logo.png`
-3. Import the repo into Vercel
-4. Deploy
