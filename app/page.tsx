@@ -78,14 +78,14 @@ export default function Home() {
                 <Sparkles className="mb-3 h-5 w-5 text-[#ffd84d]" />
                 Valeting
               </div>
-              <div className="rounded-2xl border border-white/10 bg-white/[0.045] p-4">
+              <Link href="/ceramic-coatings" className="rounded-2xl border border-white/10 bg-white/[0.045] p-4 transition hover:bg-white/[0.08]">
                 <ShieldCheck className="mb-3 h-5 w-5 text-[#58a6ff]" />
                 Ceramic protection
-              </div>
-              <div className="rounded-2xl border border-white/10 bg-white/[0.045] p-4">
+              </Link>
+              <Link href="/machine-polishing" className="rounded-2xl border border-white/10 bg-white/[0.045] p-4 transition hover:bg-white/[0.08]">
                 <SlidersHorizontal className="mb-3 h-5 w-5 text-[#ffd84d]" />
                 Paint correction
-              </div>
+              </Link>
             </div>
           </div>
 
@@ -178,6 +178,24 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 py-16 md:px-8">
+        <div className="grid gap-5 md:grid-cols-2">
+          <Link href="/machine-polishing" className="group rounded-[2rem] border border-white/10 bg-white/[0.045] p-6 transition hover:-translate-y-1 hover:bg-white/[0.08]">
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#58a6ff]">Learn</p>
+            <h2 className="mt-3 text-3xl font-semibold">Machine Polishing</h2>
+            <p className="mt-4 leading-7 text-white/58">See the benefits of paint correction and understand Stage 1, Stage 2 and Stage 3 polishing.</p>
+            <span className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[#ffd84d]">Read more <ArrowRight className="h-4 w-4" /></span>
+          </Link>
+
+          <Link href="/ceramic-coatings" className="group rounded-[2rem] border border-white/10 bg-white/[0.045] p-6 transition hover:-translate-y-1 hover:bg-white/[0.08]">
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#ffd84d]">Protect</p>
+            <h2 className="mt-3 text-3xl font-semibold">Ceramic Coatings</h2>
+            <p className="mt-4 leading-7 text-white/58">Understand wax, 1 year, 3 year and 5 year protection options before you choose.</p>
+            <span className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[#ffd84d]">Read more <ArrowRight className="h-4 w-4" /></span>
+          </Link>
         </div>
       </section>
 
