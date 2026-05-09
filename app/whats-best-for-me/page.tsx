@@ -101,7 +101,7 @@ Can you confirm what you’d recommend and availability please?`;
               </p>
             </div>
 
-            <div className="gloss-card rounded-[2rem] border border-[#ffd84d]/35 bg-white/[0.08] p-6 shadow-2xl shadow-yellow-950/20 backdrop-blur-xl">
+            <div className="gloss-card premium-reflection soft-shimmer rounded-[2rem] border border-[#ffd84d]/35 bg-white/[0.08] p-6 shadow-2xl shadow-yellow-950/20 backdrop-blur-xl">
               <Wand2 className="mb-5 h-10 w-10 text-[#ffd84d]" />
               <p className="text-sm text-white/45">Your recommendation</p>
               <h2 className="mt-2 text-3xl font-semibold">{complete ? "Ready" : "Answer the quiz"}</h2>
@@ -118,7 +118,7 @@ Can you confirm what you’d recommend and availability please?`;
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-24">
         <div className="grid gap-6">
           {questions.map((question, index) => (
-            <div key={question.key} className="rounded-[2rem] border border-white/10 bg-white/[0.055] p-5 md:p-8">
+            <div key={question.key} className="soft-shimmer rounded-[2rem] border border-white/10 bg-white/[0.055] p-5 md:p-8">
               <div className="mb-5 flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#ffd84d] font-bold text-black">
                   {index + 1}

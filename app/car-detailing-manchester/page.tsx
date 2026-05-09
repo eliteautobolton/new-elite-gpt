@@ -59,7 +59,7 @@ export default function LocationPage() {
             "WhatsApp booking and quick enquiries",
             "Based in Bolton with local customers nearby",
           ].map((item) => (
-            <div key={item} className="rounded-[2rem] border border-white/10 bg-white/[0.055] p-6">
+            <div key={item} className="soft-shimmer rounded-[2rem] border border-white/10 bg-white/[0.055] p-6">
               <Check className="mb-5 h-6 w-6 text-[#ffd84d]" />
               <p className="font-semibold">{item}</p>
             </div>

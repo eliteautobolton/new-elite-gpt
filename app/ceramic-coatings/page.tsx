@@ -92,7 +92,11 @@ export default function CeramicCoatings() {
               </div>
             </div>
 
-            <div className="gloss-card rounded-[2rem] border border-[#ffd84d]/35 bg-white/[0.08] p-6 shadow-2xl shadow-yellow-950/20 backdrop-blur-xl">
+            <div className="ceramic-water premium-reflection soft-shimmer rounded-[2rem] border border-[#58a6ff]/35 bg-white/[0.08] p-6 shadow-2xl shadow-blue-950/20 backdrop-blur-xl">
+              <span className="ceramic-bead left-[12%] top-[4%]" style={{ animationDelay: "0s" }} />
+              <span className="ceramic-bead left-[32%] top-[9%]" style={{ animationDelay: "1.1s" }} />
+              <span className="ceramic-bead left-[58%] top-[2%]" style={{ animationDelay: "2.1s" }} />
+              <span className="ceramic-bead left-[82%] top-[12%]" style={{ animationDelay: "3.2s" }} />
               <Droplets className="mb-5 h-10 w-10 text-[#58a6ff]" />
               <p className="text-sm text-white/45">Why customers love it</p>
               <h2 className="mt-2 text-4xl font-bold">Water flies off. Dirt sticks less.</h2>
@@ -107,7 +111,7 @@ export default function CeramicCoatings() {
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-24">
         <div className="grid gap-5 md:grid-cols-4">
           {options.map((option) => (
-            <article key={option.title} className={`relative rounded-[2rem] border p-6 ${option.title === "1 Year Ceramic" ? "border-[#ffd84d]/50 bg-white/[0.09]" : "border-white/10 bg-white/[0.055]"}`}>
+            <article key={option.title} className={`ceramic-water soft-shimmer relative rounded-[2rem] border p-6 ${option.title === "1 Year Ceramic" ? "border-[#ffd84d]/50 bg-white/[0.09]" : "border-white/10 bg-white/[0.055]"}`}>
               {option.title === "1 Year Ceramic" && (
                 <div className="absolute right-5 top-5 rounded-full bg-[#ffd84d] px-3 py-1 text-xs font-bold text-black">
                   Most popular

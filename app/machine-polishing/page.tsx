@@ -87,7 +87,7 @@ export default function MachinePolishing() {
               </div>
             </div>
 
-            <div className="gloss-card rounded-[2rem] border border-[#ffd84d]/35 bg-white/[0.08] p-6 shadow-2xl shadow-yellow-950/20 backdrop-blur-xl">
+            <div className="gloss-card premium-reflection soft-shimmer rounded-[2rem] border border-[#ffd84d]/35 bg-white/[0.08] p-6 shadow-2xl shadow-yellow-950/20 backdrop-blur-xl">
               <Sun className="mb-5 h-10 w-10 text-[#ffd84d]" />
               <p className="text-sm text-white/45">Why it matters</p>
               <h2 className="mt-2 text-4xl font-bold">Summer shows everything.</h2>
@@ -102,7 +102,7 @@ export default function MachinePolishing() {
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-24">
         <div className="grid gap-5 md:grid-cols-3">
           {stages.map((stage, index) => (
-            <article key={stage.title} className="rounded-[2rem] border border-white/10 bg-white/[0.055] p-6">
+            <article key={stage.title} className="soft-shimmer rounded-[2rem] border border-white/10 bg-white/[0.055] p-6">
               <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-2xl bg-[#ffd84d] font-bold text-black">
                 {index + 1}
               </div>

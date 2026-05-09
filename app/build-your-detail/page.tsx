@@ -247,7 +247,7 @@ Can you confirm the final price and availability please?`;
       </section>
 
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-24">
-        <div className="rounded-[2rem] border border-white/10 bg-white/[0.055] p-5 md:p-8">
+        <div className="soft-shimmer rounded-[2rem] border border-white/10 bg-white/[0.055] p-5 md:p-8">
           <StepHeader
             number="1"
             title="Choose your vehicle size"

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import GoogleReviews from "./components/GoogleReviews";
 import GlossEffects from "./components/GlossEffects";
+import NewsletterSignup from "./components/NewsletterSignup";
 import {
   ArrowRight,
   Calendar,
@@ -89,7 +90,7 @@ export default function Home() {
           <div className="grid gap-5 md:grid-cols-2">
             <Link
               href="/build-your-detail"
-              className="group gloss-card relative overflow-hidden rounded-[2rem] border border-[#ffd84d]/35 bg-white/[0.09] p-6 shadow-2xl shadow-yellow-950/20 backdrop-blur-xl transition hover:-translate-y-1 hover:bg-white/[0.12]"
+              className="group gloss-card premium-reflection soft-shimmer relative overflow-hidden rounded-[2rem] border border-[#ffd84d]/35 bg-white/[0.09] p-6 shadow-2xl shadow-yellow-950/20 backdrop-blur-xl transition hover:-translate-y-1 hover:bg-white/[0.12]"
             >
               <div className="absolute right-5 top-5 rounded-full bg-[#ffd84d] px-3 py-1 text-xs font-bold text-black">
                 Most popular
@@ -122,7 +123,7 @@ export default function Home() {
 
             <Link
               href="/maintenance-program"
-              className="group gloss-card relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.065] p-6 shadow-2xl shadow-blue-950/20 backdrop-blur-xl transition hover:-translate-y-1 hover:bg-white/[0.1]"
+              className="group gloss-card premium-reflection soft-shimmer relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.065] p-6 shadow-2xl shadow-blue-950/20 backdrop-blur-xl transition hover:-translate-y-1 hover:bg-white/[0.1]"
             >
               <Calendar className="mb-8 h-10 w-10 text-[#58a6ff]" />
 
@@ -187,7 +188,7 @@ export default function Home() {
             <span className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[#ffd84d]">Read more <ArrowRight className="h-4 w-4" /></span>
           </Link>
 
-          <Link href="/ceramic-coatings" className="group rounded-[2rem] border border-white/10 bg-white/[0.045] p-6 transition hover:-translate-y-1 hover:bg-white/[0.08]">
+          <Link href="/ceramic-coatings" className="group ceramic-water soft-shimmer rounded-[2rem] border border-white/10 bg-white/[0.045] p-6 transition hover:-translate-y-1 hover:bg-white/[0.08]">
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#ffd84d]">Protect</p>
             <h2 className="mt-3 text-3xl font-semibold">Ceramic Coatings</h2>
             <p className="mt-4 leading-7 text-white/58">Understand wax, 1 year, 3 year and 5 year protection options before you choose.</p>
@@ -197,7 +198,7 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8">
-        <div className="rounded-[2rem] border border-white/10 bg-white/[0.045] p-6 text-center md:p-10">
+        <div className="soft-shimmer rounded-[2rem] border border-white/10 bg-white/[0.045] p-6 text-center md:p-10">
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#58a6ff]">
             Elite Auto Detailing
           </p>
@@ -219,10 +220,12 @@ export default function Home() {
         </div>
       </section>
 
+      <NewsletterSignup />
+
       <GoogleReviews />
 
       <section className="mx-auto max-w-7xl px-5 pb-16 md:px-8">
-        <div className="rounded-[2rem] border border-white/10 bg-white/[0.045] p-6">
+        <div className="soft-shimmer rounded-[2rem] border border-white/10 bg-white/[0.045] p-6">
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#58a6ff]">Local services</p>
           <div className="mt-5 grid gap-3 md:grid-cols-4">
             <Link href="/car-detailing-bolton" className="rounded-2xl bg-black/25 p-4 text-sm font-semibold text-white/70 transition hover:bg-white/[0.08]">Car Detailing Bolton</Link>

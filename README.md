@@ -1,38 +1,61 @@
-# Elite Auto Detailing Website V11
+# Elite Auto Detailing Website V13
 
-V11 is the wild upgrade.
+V13 adds Brevo mailing list integration.
 
 ## Added
 
-- Floating WhatsApp button site-wide
-- Google Reviews section at the bottom of every page
-- Google Place ID used: ChIJbdkbEMune0gRHKMSCnvMoRY
-- New What’s Best For Me quiz:
-  - `/whats-best-for-me`
-- Homepage “Not sure what to choose?” now links to the quiz
-- Animated gloss effects
-- SEO location pages:
-  - `/car-detailing-bolton`
-  - `/car-detailing-manchester`
-  - `/machine-polishing-bolton`
-  - `/ceramic-coating-bolton`
+- Premium homepage newsletter signup
+- Secure Next.js API route:
+  - `/app/api/newsletter/route.ts`
+- Brevo contact creation
+- Uses environment variables, so the API key is not exposed in browser code
+- `.env.example` included
 
-## Notes on Google Reviews
+## Important security note
 
-The site links directly to the Google Business Profile/review flow using the Place ID.
-Live review text usually requires Google Places API billing/key or an approved widget provider.
+Do not hardcode your Brevo API key into any frontend file.
 
-## Replace / Upload
+Since an API key was shared in chat, regenerate/rotate it in Brevo after setup.
 
-Upload the full V11 repo contents to GitHub for easiest deployment.
+## Vercel Environment Variables
 
-Keep your logo:
+In Vercel:
+
+Project → Settings → Environment Variables
+
+Add:
+
+```bash
+BREVO_API_KEY=your actual Brevo API key
+BREVO_LIST_ID=your Brevo list ID number
+```
+
+## How to find BREVO_LIST_ID
+
+Brevo → Contacts → Lists → open your list.
+
+The list ID is the number shown in the URL or list details.
+
+## Upload
+
+Upload/replace the full V13 repo contents for easiest deployment.
+
+Keep:
 
 ```bash
 public/logo.png
 ```
 
-## Run
+## Run locally
+
+Create `.env.local`:
+
+```bash
+BREVO_API_KEY=your_key
+BREVO_LIST_ID=your_list_id
+```
+
+Then:
 
 ```bash
 npm install
