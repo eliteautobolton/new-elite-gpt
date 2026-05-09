@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import FloatingWhatsApp from "./components/FloatingWhatsApp";
 
 export const metadata: Metadata = {
   title: "Elite Auto Detailing Bolton",
@@ -14,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>{children}<FloatingWhatsApp /></body>
     </html>
   );
 }

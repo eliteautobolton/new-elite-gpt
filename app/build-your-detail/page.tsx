@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import GoogleReviews from "../components/GoogleReviews";
+import GlossEffects from "../components/GlossEffects";
 import {
   ArrowLeft,
   Calculator,
@@ -178,6 +180,7 @@ Can you confirm the final price and availability please?`;
 
   return (
     <main className="min-h-screen bg-[#05070d] text-white">
+      <GlossEffects />
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(0,132,255,0.34),transparent_34%),radial-gradient(circle_at_top_right,rgba(255,216,77,0.18),transparent_30%)]" />
 
@@ -381,6 +384,8 @@ Can you confirm the final price and availability please?`;
           </div>
         </div>
       </section>
+
+      <GoogleReviews />
 
       <footer className="mx-auto flex max-w-7xl flex-col gap-4 border-t border-white/10 px-5 py-10 text-sm text-white/45 md:flex-row md:items-center md:justify-between md:px-8">
         <p>Elite Auto Detailing</p>

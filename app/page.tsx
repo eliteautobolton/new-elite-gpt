@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import GoogleReviews from "./components/GoogleReviews";
+import GlossEffects from "./components/GlossEffects";
 import {
   ArrowRight,
   Calendar,
@@ -14,6 +16,7 @@ import {
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#05070d] text-white">
+      <GlossEffects />
       <section className="relative min-h-screen border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(0,132,255,0.34),transparent_34%),radial-gradient(circle_at_top_right,rgba(255,216,77,0.18),transparent_32%),linear-gradient(180deg,rgba(255,255,255,0.06),transparent_45%)]" />
 
@@ -52,7 +55,7 @@ export default function Home() {
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
-                href="/build-your-detail"
+                href="/whats-best-for-me"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-[#ffd84d] px-6 py-3 text-sm font-bold text-black transition hover:scale-[1.02] hover:bg-[#ffe276]"
               >
                 Build your detail
@@ -86,7 +89,7 @@ export default function Home() {
           <div className="grid gap-5 md:grid-cols-2">
             <Link
               href="/build-your-detail"
-              className="group relative overflow-hidden rounded-[2rem] border border-[#ffd84d]/35 bg-white/[0.09] p-6 shadow-2xl shadow-yellow-950/20 backdrop-blur-xl transition hover:-translate-y-1 hover:bg-white/[0.12]"
+              className="group gloss-card relative overflow-hidden rounded-[2rem] border border-[#ffd84d]/35 bg-white/[0.09] p-6 shadow-2xl shadow-yellow-950/20 backdrop-blur-xl transition hover:-translate-y-1 hover:bg-white/[0.12]"
             >
               <div className="absolute right-5 top-5 rounded-full bg-[#ffd84d] px-3 py-1 text-xs font-bold text-black">
                 Most popular
@@ -119,7 +122,7 @@ export default function Home() {
 
             <Link
               href="/maintenance-program"
-              className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.065] p-6 shadow-2xl shadow-blue-950/20 backdrop-blur-xl transition hover:-translate-y-1 hover:bg-white/[0.1]"
+              className="group gloss-card relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.065] p-6 shadow-2xl shadow-blue-950/20 backdrop-blur-xl transition hover:-translate-y-1 hover:bg-white/[0.1]"
             >
               <Calendar className="mb-8 h-10 w-10 text-[#58a6ff]" />
 
@@ -202,18 +205,31 @@ export default function Home() {
             Not sure what to choose?
           </h2>
           <p className="mx-auto mt-4 max-w-2xl leading-7 text-white/58">
-            Use Build Your Detail for the easiest route. You can select the size
-            of your vehicle, choose the service level and send everything over
-            in one WhatsApp message.
+            Take the quick What’s Best For Me quiz and get a recommended base package,
+            polish stage and protection option in under a minute.
           </p>
 
           <Link
-            href="/build-your-detail"
+            href="/whats-best-for-me"
             className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-[#ffd84d] px-6 py-3 text-sm font-bold text-black transition hover:scale-[1.02] hover:bg-[#ffe276]"
           >
-            Start building
+            Take the quiz
             <ArrowRight className="h-4 w-4" />
           </Link>
+        </div>
+      </section>
+
+      <GoogleReviews />
+
+      <section className="mx-auto max-w-7xl px-5 pb-16 md:px-8">
+        <div className="rounded-[2rem] border border-white/10 bg-white/[0.045] p-6">
+          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#58a6ff]">Local services</p>
+          <div className="mt-5 grid gap-3 md:grid-cols-4">
+            <Link href="/car-detailing-bolton" className="rounded-2xl bg-black/25 p-4 text-sm font-semibold text-white/70 transition hover:bg-white/[0.08]">Car Detailing Bolton</Link>
+            <Link href="/car-detailing-manchester" className="rounded-2xl bg-black/25 p-4 text-sm font-semibold text-white/70 transition hover:bg-white/[0.08]">Car Detailing Manchester</Link>
+            <Link href="/machine-polishing-bolton" className="rounded-2xl bg-black/25 p-4 text-sm font-semibold text-white/70 transition hover:bg-white/[0.08]">Machine Polishing Bolton</Link>
+            <Link href="/ceramic-coating-bolton" className="rounded-2xl bg-black/25 p-4 text-sm font-semibold text-white/70 transition hover:bg-white/[0.08]">Ceramic Coating Bolton</Link>
+          </div>
         </div>
       </section>
 

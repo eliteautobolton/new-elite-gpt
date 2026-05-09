@@ -24,3 +24,51 @@ input[type="date"]::-webkit-calendar-picker-indicator,
 input[type="time"]::-webkit-calendar-picker-indicator {
   filter: invert(1);
 }
+
+
+@keyframes floatGlow {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.65;
+  }
+  50% {
+    transform: translate3d(24px, -18px, 0) scale(1.08);
+    opacity: 1;
+  }
+}
+
+@keyframes glossSweep {
+  0% {
+    transform: translateX(-130%) rotate(18deg);
+  }
+  100% {
+    transform: translateX(230%) rotate(18deg);
+  }
+}
+
+.gloss-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.gloss-card::after {
+  content: "";
+  position: absolute;
+  top: -40%;
+  left: -60%;
+  width: 35%;
+  height: 180%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+  transform: rotate(18deg);
+  animation: glossSweep 6s ease-in-out infinite;
+  opacity: 0.8;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gloss-card::after,
+  .animate-\[floatGlow_8s_ease-in-out_infinite\],
+  .animate-\[floatGlow_10s_ease-in-out_infinite\],
+  .animate-\[floatGlow_12s_ease-in-out_infinite\] {
+    animation: none !important;
+  }
+}

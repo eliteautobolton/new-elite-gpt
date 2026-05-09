@@ -1,15 +1,40 @@
-# Elite Auto Detailing Website V10
+# Elite Auto Detailing Website V11
 
-## Changes
-- Increased header logo size to h-22 w-22 across the site
-- Keeps all V9 functionality and pages
+V11 is the wild upgrade.
 
-## Pages included
-- Homepage
-- Build Your Detail
-- Maintenance Program
-- Machine Polishing
-- Ceramic Coatings
+## Added
 
-## Deploy
-Upload/replace the full repo contents or update the modified files.
+- Floating WhatsApp button site-wide
+- Google Reviews section at the bottom of every page
+- Google Place ID used: ChIJbdkbEMune0gRHKMSCnvMoRY
+- New What’s Best For Me quiz:
+  - `/whats-best-for-me`
+- Homepage “Not sure what to choose?” now links to the quiz
+- Animated gloss effects
+- SEO location pages:
+  - `/car-detailing-bolton`
+  - `/car-detailing-manchester`
+  - `/machine-polishing-bolton`
+  - `/ceramic-coating-bolton`
+
+## Notes on Google Reviews
+
+The site links directly to the Google Business Profile/review flow using the Place ID.
+Live review text usually requires Google Places API billing/key or an approved widget provider.
+
+## Replace / Upload
+
+Upload the full V11 repo contents to GitHub for easiest deployment.
+
+Keep your logo:
+
+```bash
+public/logo.png
+```
+
+## Run
+
+```bash
+npm install
+npm run dev
+```

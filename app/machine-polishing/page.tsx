@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import GoogleReviews from "../components/GoogleReviews";
+import GlossEffects from "../components/GlossEffects";
 import {
   ArrowLeft,
   ArrowRight,
@@ -40,6 +42,7 @@ const benefits = [
 export default function MachinePolishing() {
   return (
     <main className="min-h-screen bg-[#05070d] text-white">
+      <GlossEffects />
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(0,132,255,0.34),transparent_34%),radial-gradient(circle_at_top_right,rgba(255,216,77,0.18),transparent_30%)]" />
 
@@ -84,7 +87,7 @@ export default function MachinePolishing() {
               </div>
             </div>
 
-            <div className="rounded-[2rem] border border-[#ffd84d]/35 bg-white/[0.08] p-6 shadow-2xl shadow-yellow-950/20 backdrop-blur-xl">
+            <div className="gloss-card rounded-[2rem] border border-[#ffd84d]/35 bg-white/[0.08] p-6 shadow-2xl shadow-yellow-950/20 backdrop-blur-xl">
               <Sun className="mb-5 h-10 w-10 text-[#ffd84d]" />
               <p className="text-sm text-white/45">Why it matters</p>
               <h2 className="mt-2 text-4xl font-bold">Summer shows everything.</h2>
@@ -141,6 +144,8 @@ export default function MachinePolishing() {
           </Link>
         </div>
       </section>
+
+      <GoogleReviews />
 
       <footer className="mx-auto flex max-w-7xl flex-col gap-4 border-t border-white/10 px-5 py-10 text-sm text-white/45 md:flex-row md:items-center md:justify-between md:px-8">
         <p>Elite Auto Detailing</p>
