@@ -1,21 +1,30 @@
-# Elite Auto Detailing Website V7
+# Elite Auto Detailing Website V8
 
-V7 adds Most Popular badges to the Build Your Detail page.
+V8 adds two new education/sales pages.
 
-## What changed
+## New pages
 
-On `/build-your-detail`, these options now show a Most Popular banner:
+- `/machine-polishing`
+  - Machine polishing benefits
+  - Stage 1 Gloss explained
+  - Stage 2 Correct explained
+  - Stage 3 Restore explained
 
-- Full Valet
-- Stage 1 Gloss
-- 1 Year Ceramic
+- `/ceramic-coatings`
+  - Ceramic coating benefits
+  - Wax, 1 Year, 3 Year and 5 Year options explained
+  - 1 Year Ceramic marked as Most Popular
 
-## Replace these files in GitHub
+## Homepage update
 
-If you already have V6 uploaded, replace:
+Homepage now links to the new education pages.
+
+## Replace these files/folders in GitHub
 
 ```bash
-app/build-your-detail/page.tsx
+app/page.tsx
+app/machine-polishing/page.tsx
+app/ceramic-coatings/page.tsx
 package.json
 README.md
 ```
@@ -23,7 +32,7 @@ README.md
 Keep:
 
 ```bash
-app/page.tsx
+app/build-your-detail/page.tsx
 app/maintenance-program/page.tsx
 public/logo.png
 ```
