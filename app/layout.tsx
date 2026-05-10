@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import FloatingWhatsApp from "./components/FloatingWhatsApp";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "Elite Auto Detailing Bolton",
@@ -15,7 +16,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}<FloatingWhatsApp /></body>
+      <body>
+        {children}
+        <FloatingWhatsApp />
+        <Analytics />
+      </body>
     </html>
   );
 }
